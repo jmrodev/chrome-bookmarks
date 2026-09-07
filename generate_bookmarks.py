@@ -22,6 +22,12 @@ URL_REDIRECTS = {
 }
 
 PURGED_URLS = {
+    # Seguridad / Claves privadas
+    "http://jmro.duckdns.org:8088/cgi-bin/wake?key=jmro-wake-2026": "Seguridad (Clave privada de servidor / Wake-on-LAN)",
+    # Privacidad / NSFW
+    "https://huggingface.co/Heartsync/NSFW-Uncensored?not-for-all-audiences=true": "Privacidad (Filtro NSFW)",
+    "https://undressme.ai/video": "Privacidad (Filtro NSFW)",
+    # Dominios caídos / DNS / 404
     "https://constana.io/dashboard/home": "DNS no resuelve / Dominio inactivo",
     "https://github.com/jmrodev/practicas-iniciales": "HTTP 404 (Repositorio eliminado)",
     "https://www.aluracursos.com/challenges/challenge-one-logica": "HTTP 404 (Página eliminada)",
@@ -587,14 +593,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     # Write report of removed & repaired links
     report_lines = [
-        "# 📋 Auditoría y Limpieza de Enlaces Caídos",
+        "# 📋 Auditoría y Limpieza de Enlaces Caídos y Privados",
         "",
         f"Informe generado automáticamente tras auditar los **543 marcadores** únicos de la exportación original.",
         "",
         "## Resumen Ejecutivo",
         f"- **Enlaces Activos Conservados:** {total_clean}",
         f"- **Enlaces Redireccionados a Fuentes Oficiales:** {len(URL_REDIRECTS)}",
-        f"- **Enlaces Caídos Depurados / Eliminados:** {len(PURGED_URLS)}",
+        f"- **Enlaces Caídos / Privados Depurados:** {len(PURGED_URLS)}",
         "",
         "---",
         "",
@@ -623,9 +629,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "",
         "---",
         "",
-        "## ❌ Enlaces Caídos Depurados (Eliminados)",
+        "## ❌ Enlaces Depurados (Caídos, Seguridad y Privacidad)",
         "",
-        "Los siguientes enlaces fueron confirmados como inaccesibles (errores DNS, dominios dados de baja, HTTP 404 definitivos o servidores inactivos) y han sido depurados de la colección final:",
+        "Los siguientes enlaces fueron confirmados como inaccesibles (errores DNS, dominios dados de baja, HTTP 404 definitivos) o depurados por motivos de seguridad y privacidad (claves de servidor, contenido adulto):",
         "",
         "| # | Título | Motivo de Baja | URL |",
         "| :-: | :--- | :--- | :--- |"

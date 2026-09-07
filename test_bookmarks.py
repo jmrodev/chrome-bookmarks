@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Test Suite for Chrome Netscape Bookmark Format & Health
-Validates format compliance, tag balance, clean data integrity, and zero dead links.
+Validates format compliance, tag balance, clean data integrity, and zero dead/private links.
 """
 
 import os
@@ -27,6 +27,12 @@ URL_REDIRECTS = {
 }
 
 PURGED_URLS = {
+    # Seguridad / Claves privadas
+    "http://jmro.duckdns.org:8088/cgi-bin/wake?key=jmro-wake-2026",
+    # Privacidad / NSFW
+    "https://huggingface.co/Heartsync/NSFW-Uncensored?not-for-all-audiences=true",
+    "https://undressme.ai/video",
+    # Dominios caídos / DNS / 404
     "https://constana.io/dashboard/home",
     "https://github.com/jmrodev/practicas-iniciales",
     "https://www.aluracursos.com/challenges/challenge-one-logica",
@@ -138,7 +144,6 @@ class TestChromeBookmarkFormat(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.orig_path = ORIGINAL_FILE
-        # If target file exists in current directory or Documents
         if os.path.exists("bookmarks_ordenados.html"):
             cls.target_path = "bookmarks_ordenados.html"
         else:
@@ -196,11 +201,11 @@ class TestChromeBookmarkFormat(unittest.TestCase):
         for fpath, count in self.parser.folder_children.items():
             self.assertGreater(count, 0, f"La carpeta '{fpath}' no tiene ningún marcador o subcarpeta.")
 
-    def test_06_purged_dead_links_removed(self):
-        """Regla 6: Los 42 enlaces caídos confirmados deben haber sido depurados."""
+    def test_06_purged_links_removed(self):
+        """Regla 6: Los 45 enlaces caídos o depurados deben haber sido eliminados."""
         target_urls = set(b["url"] for b in self.parser.bookmarks)
         found_dead = target_urls.intersection(PURGED_URLS)
-        self.assertEqual(len(found_dead), 0, f"Se encontraron enlaces caídos no depurados: {found_dead}")
+        self.assertEqual(len(found_dead), 0, f"Se encontraron enlaces no depurados: {found_dead}")
 
     def test_07_canonical_redirects_applied(self):
         """Regla 7: Los enlaces reparados deben apuntar a sus URLs canónicas."""
@@ -215,7 +220,7 @@ class TestChromeBookmarkFormat(unittest.TestCase):
         unique_urls = set(urls)
         self.assertEqual(len(urls), len(unique_urls), 
                          f"Existen {len(urls) - len(unique_urls)} URLs duplicadas en el archivo generado.")
-        self.assertEqual(len(unique_urls), 501, f"Se esperaban 501 enlaces únicos depurados, pero hay {len(unique_urls)}")
+        self.assertEqual(len(unique_urls), 498, f"Se esperaban 498 enlaces únicos depurados, pero hay {len(unique_urls)}")
 
     def test_09_url_validity(self):
         """Regla 9: Formato y validez de los esquemas de enlace."""

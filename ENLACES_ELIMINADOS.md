@@ -1,11 +1,11 @@
-# 📋 Auditoría y Limpieza de Enlaces Caídos
+# 📋 Auditoría y Limpieza de Enlaces Caídos y Privados
 
 Informe generado automáticamente tras auditar los **543 marcadores** únicos de la exportación original.
 
 ## Resumen Ejecutivo
-- **Enlaces Activos Conservados:** 501
+- **Enlaces Activos Conservados:** 498
 - **Enlaces Redireccionados a Fuentes Oficiales:** 7
-- **Enlaces Caídos Depurados / Eliminados:** 42
+- **Enlaces Caídos / Privados Depurados:** 45
 
 ---
 
@@ -25,9 +25,9 @@ Los siguientes marcadores apuntaban a forks personales eliminados o dominios que
 
 ---
 
-## ❌ Enlaces Caídos Depurados (Eliminados)
+## ❌ Enlaces Depurados (Caídos, Seguridad y Privacidad)
 
-Los siguientes enlaces fueron confirmados como inaccesibles (errores DNS, dominios dados de baja, HTTP 404 definitivos o servidores inactivos) y han sido depurados de la colección final:
+Los siguientes enlaces fueron confirmados como inaccesibles (errores DNS, dominios dados de baja, HTTP 404 definitivos) o depurados por motivos de seguridad y privacidad (claves de servidor, contenido adulto):
 
 | # | Título | Motivo de Baja | URL |
 | :-: | :--- | :--- | :--- |
@@ -70,6 +70,9 @@ Los siguientes enlaces fueron confirmados como inaccesibles (errores DNS, domini
 | 37 | DALL·E | `DNS no resuelve (DALL-E 2 playground deprecado)` | `https://labs.openai.com/` |
 | 38 | Curso de React.js desde cero - aprendiendo.dev | `HTTP 404` | `https://aprendiendo.dev/react#lessons` |
 | 39 | Free standardized English test calibrated to the CEFR - EF SET | `HTTP 404 (Resultado expirado)` | `https://www.efset.org/ef-set-50/take-test/#set50-131/result` |
-| 40 | Lightning-Fast Web Performance Online Course from WebPageTest | `HTTP 404` | `https://www.webpagetest.org/learn/lightning-fast-web-performance/#toc` |
-| 41 | Módulo 1: Historia y Fundamentos del COBOL | `HTTP 503 / Curso expirado` | `https://canvas.instructure.com/courses/11637553/assignments/54036652?module_item_id=128274825` |
-| 42 | SQL Practice Platform - Online SQL Terminal - Practice Queries | `Servidor inactivo / Dominio caído` | `https://www.practice-sql.com/` |
+| 40 | Wake Server | `Seguridad (Clave privada de servidor / Wake-on-LAN)` | `http://jmro.duckdns.org:8088/cgi-bin/wake?key=jmro-wake-2026` |
+| 41 | Lightning-Fast Web Performance Online Course from WebPageTest | `HTTP 404` | `https://www.webpagetest.org/learn/lightning-fast-web-performance/#toc` |
+| 42 | Módulo 1: Historia y Fundamentos del COBOL | `HTTP 503 / Curso expirado` | `https://canvas.instructure.com/courses/11637553/assignments/54036652?module_item_id=128274825` |
+| 43 | Heartsync/NSFW-Uncensored · Hugging Face | `Privacidad (Filtro NSFW)` | `https://huggingface.co/Heartsync/NSFW-Uncensored?not-for-all-audiences=true` |
+| 44 | UndressMe AI – Free NSFW AI Nude Image & Video Generator | `Privacidad (Filtro NSFW)` | `https://undressme.ai/video` |
+| 45 | SQL Practice Platform - Online SQL Terminal - Practice Queries | `Servidor inactivo / Dominio caído` | `https://www.practice-sql.com/` |

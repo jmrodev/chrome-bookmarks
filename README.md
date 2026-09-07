@@ -4,7 +4,7 @@ Un organizador, limpiador y panel interactivo para marcadores de Google Chrome, 
 
 [![Format: Netscape Bookmark](https://img.shields.io/badge/Format-Netscape_Bookmark_HTML-blue.svg)](https://en.wikipedia.org/wiki/Netscape_Bookmark_File_Format)
 [![Tests: 10/10 Passing](https://img.shields.io/badge/Tests-10%2F10_Passing-brightgreen.svg)](test_bookmarks.py)
-[![Bookmarks: 501 Active](https://img.shields.io/badge/Active_Bookmarks-501-success.svg)](bookmarks_ordenados.html)
+[![Bookmarks: 498 Active](https://img.shields.io/badge/Active_Bookmarks-498-success.svg)](bookmarks_ordenados.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
 
 ---
